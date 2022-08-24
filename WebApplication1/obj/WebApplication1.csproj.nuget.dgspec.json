@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\Contacts\\Hotel-Management-System\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\Contacts\\Hotel-Management-System\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\Contacts\\Hotel-Management-System\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "D:\\Contacts\\Hotel-Management-System\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\Kethaki.D\\.nuget\\packages\\",
-        "outputPath": "D:\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "D:\\Contacts\\Hotel-Management-System\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kethaki.D\\AppData\\Roaming\\NuGet\\NuGet.Config",

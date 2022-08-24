@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m5ww8qqQ89vWQQQWWsCrDM+Dxfyn16O9OkSCClc2AmyNXTW8DYwDcs2w6DhLqglXrgJU8iilvLNMdFWI39uaTw==",
+  "dgSpecHash": "djY/YX6kR920HDGKfoDzqxgXi/q7BqfVfmJp/U41J1CVVidQLUDFFOVRchQosq/0eae3AV1Tngy5D7vVK6f/zQ==",
   "success": true,
-  "projectFilePath": "D:\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "D:\\Contacts\\Hotel-Management-System\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kethaki.D\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\Kethaki.D\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",
