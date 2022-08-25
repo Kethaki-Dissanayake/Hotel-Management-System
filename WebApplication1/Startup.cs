@@ -32,12 +32,13 @@ namespace WebApplication1
 
             services.AddDbContext<MyContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("ContactDB")));
-            services.AddDbContext<MyContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("FeatureDB")));
+            //services.AddDbContext<MyContext>(
+                //options => options.UseSqlServer(Configuration.GetConnectionString("FeatureDB")));
 
             services.AddControllers();
             services.AddTransient<IContactRepository, ContactRepository>();
             services.AddTransient<IFeatureRepository, FeatureRepository>();
+            services.AddTransient<IPriceRepository, PriceRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

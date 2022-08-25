@@ -19,6 +19,8 @@ namespace WebApplication1.Data
         public DbSet<Contacts> Contacts { get; set; }
         public DbSet<Features> Features { get; set; }
 
+        public DbSet<Prices> Prices { get; set; }
+
 
     }
 }

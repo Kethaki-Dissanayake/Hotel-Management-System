@@ -39,6 +39,20 @@ namespace WebApplication1.Migrations
                 {
                     table.PrimaryKey("PK_Features", x => x.FeatureId);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Prices",
+                columns: table => new
+                {
+                    PriceId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CurrentPrice = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Prices", x => x.PriceId);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -48,6 +62,9 @@ namespace WebApplication1.Migrations
 
             migrationBuilder.DropTable(
                 name: "Features");
+
+            migrationBuilder.DropTable(
+                name: "Prices");
         }
     }
 }

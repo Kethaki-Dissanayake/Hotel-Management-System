@@ -9,7 +9,7 @@ using WebApplication1.Data;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20220825102951_init")]
+    [Migration("20220825183437_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,6 +72,24 @@ namespace WebApplication1.Migrations
                     b.HasKey("FeatureId");
 
                     b.ToTable("Features");
+                });
+
+            modelBuilder.Entity("WebApplication1.Data.Prices", b =>
+                {
+                    b.Property<int>("PriceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CurrentPrice")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PriceId");
+
+                    b.ToTable("Prices");
                 });
 #pragma warning restore 612, 618
         }
