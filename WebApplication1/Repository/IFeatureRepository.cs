@@ -12,10 +12,10 @@ namespace WebApplication1.Repository
         
         Task<List<FeatureModel>> GetAllFeaturesAsync();
 
-        Task<FeatureModel> GetFeatureByCodeAsync(string featureCode);
-        Task<string> AddFeatureAsync(FeatureModel featuretModel);
-        Task UpdateFeatureAsync(string featureCode, FeatureModel featureModel);
-        Task DeleteFeatureAsync(string featureCode);
+        Task<FeatureModel> GetFeatureByIdAsync(int featureId);
+        Task<int> AddFeatureAsync(FeatureModel featuretModel);
+        Task UpdateFeatureAsync(int featureId, FeatureModel featureModel);
+        Task DeleteFeatureAsync(int featureId);
     }
     
 }

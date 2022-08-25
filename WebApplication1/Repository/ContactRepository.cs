@@ -10,9 +10,9 @@ namespace WebApplication1.Repository
 {
     public class ContactRepository : IContactRepository
     {
-        private readonly ContactContext _context;
+        private readonly MyContext _context;
 
-        public ContactRepository(ContactContext context)
+        public ContactRepository(MyContext context)
         {
             _context = context;
         }

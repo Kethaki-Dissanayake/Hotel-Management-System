@@ -34,10 +34,10 @@ namespace WebApplication1.Controllers
 
 
 
-        [HttpGet("{code}")]
-        public async Task<IActionResult> GetFeatureByCode([FromRoute] string code)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetFeatureById([FromRoute] int id)
         {
-            var feature = await _featureRepository.GetFeatureByCodeAsync(code);
+            var feature = await _featureRepository.GetFeatureByIdAsync(id);
             if (feature == null)
             {
                 return NotFound();
@@ -53,17 +53,17 @@ namespace WebApplication1.Controllers
         [HttpPost("")]
         public async Task<IActionResult> AddNewFeature([FromBody] FeatureModel featureModel)
         {
-            var code = await _featureRepository.AddFeatureAsync(featureModel);
-            return CreatedAtAction(nameof(GetFeatureByCode), new { code = code, controller = "features" }, code);
+            var id = await _featureRepository.AddFeatureAsync(featureModel);
+            return CreatedAtAction(nameof(GetFeatureById), new { id = id, controller = "features" }, id);
 
         }
 
 
 
-        [HttpPut("{code}")]
-        public async Task<IActionResult> UpdateFeature([FromBody] FeatureModel featureModel, [FromRoute] string code)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateFeature([FromBody] FeatureModel featureModel, [FromRoute] int id)
         {
-            await _featureRepository.UpdateFeatureAsync(code, featureModel);
+            await _featureRepository.UpdateFeatureAsync(id, featureModel);
             return Ok();
 
         }
@@ -71,10 +71,10 @@ namespace WebApplication1.Controllers
 
 
 
-        [HttpDelete("{code}")]
-        public async Task<IActionResult> DeleteFeature([FromRoute] string code)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteFeature([FromRoute] int id)
         {
-            await _featureRepository.DeleteFeatureAsync(code);
+            await _featureRepository.DeleteFeatureAsync(id);
             return Ok();
 
         }

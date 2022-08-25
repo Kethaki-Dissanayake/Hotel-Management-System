@@ -30,9 +30,9 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {   
 
-            services.AddDbContext<ContactContext>(
+            services.AddDbContext<MyContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("ContactDB")));
-            services.AddDbContext<FeatureContext>(
+            services.AddDbContext<MyContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("FeatureDB")));
 
             services.AddControllers();

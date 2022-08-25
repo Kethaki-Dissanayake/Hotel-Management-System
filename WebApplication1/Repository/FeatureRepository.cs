@@ -12,9 +12,9 @@ namespace WebApplication1.Repository
    
     public class FeatureRepository : IFeatureRepository
     {
-        private readonly FeatureContext _context;
+        private readonly MyContext _context;
 
-        public FeatureRepository(FeatureContext context)
+        public FeatureRepository(MyContext context)
         {
             _context = context;
         }
@@ -23,6 +23,7 @@ namespace WebApplication1.Repository
         {
             var records = await _context.Features.Select(x => new FeatureModel()
             {
+                FeatureId = x.FeatureId,
                 Code = x.Code,
                 Name = x.Name,
                 Description = x.Description
@@ -33,11 +34,11 @@ namespace WebApplication1.Repository
             return records;
         }
 
-        public async Task<FeatureModel> GetFeatureByCodeAsync(string featureCode)
+        public async Task<FeatureModel> GetFeatureByIdAsync(int featureId)
         {
-            var records = await _context.Features.Where(x => x.Code == featureCode).Select(x => new FeatureModel()
+            var records = await _context.Features.Where(x => x.FeatureId == featureId).Select(x => new FeatureModel()
             {
-
+                FeatureId= x.FeatureId,
                 Code = x.Code,
                 Name = x.Name,
                 Description = x.Description
@@ -47,12 +48,12 @@ namespace WebApplication1.Repository
             return records;
         }
 
-        public async Task<string> AddFeatureAsync(FeatureModel featuretModel)
+        public async Task<int> AddFeatureAsync(FeatureModel featuretModel)
         {
 
             var feature = new Features()
             {
-                
+                FeatureId = featuretModel.FeatureId,
                 Code = featuretModel.Code,
                 Name = featuretModel.Name,
                 Description = featuretModel.Description
@@ -62,16 +63,16 @@ namespace WebApplication1.Repository
             _context.Features.Add(feature);
             await _context.SaveChangesAsync();
 
-            return feature.Code;
+            return feature.FeatureId;
         }
 
-        public async Task UpdateFeatureAsync(string featureCode, FeatureModel featureModel)
+        public async Task UpdateFeatureAsync(int featureId, FeatureModel featureModel)
         {
-            var feature = await _context.Features.FindAsync(featureCode);
+            var feature = await _context.Features.FindAsync(featureId);
 
             if (feature != null)
             {
-               
+                feature.Code = featureModel.Code;
                 feature.Name = featureModel.Name;
                 feature.Description = featureModel.Description;
 
@@ -85,10 +86,10 @@ namespace WebApplication1.Repository
         }
 
 
-        public async Task DeleteFeatureAsync(string featureCode)
+        public async Task DeleteFeatureAsync(int featureId)
         {
 
-            var feature = new Features() { Code = featureCode };
+            var feature = new Features() { FeatureId = featureId };
 
             _context.Features.Remove(feature);
             await _context.SaveChangesAsync();
