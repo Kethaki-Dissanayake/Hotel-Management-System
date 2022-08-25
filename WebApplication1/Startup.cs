@@ -28,11 +28,16 @@ namespace WebApplication1
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   
+
             services.AddDbContext<ContactContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("ContactDB")));
+            services.AddDbContext<FeatureContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("FeatureDB")));
+
             services.AddControllers();
             services.AddTransient<IContactRepository, ContactRepository>();
+            services.AddTransient<IFeatureRepository, FeatureRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
