@@ -22,6 +22,8 @@ namespace WebApplication1.Controllers
         }
 
 
+
+
         [HttpGet("")]
         public async Task<IActionResult> GetAllContacts()
         {
@@ -29,6 +31,8 @@ namespace WebApplication1.Controllers
             return Ok(contacts);
 
         }
+
+
 
 
         [HttpGet("{id}")]
@@ -45,6 +49,8 @@ namespace WebApplication1.Controllers
 
         }
 
+
+
         [HttpPost("")]
         public async Task<IActionResult> AddNewContact([FromBody]ContactModel contactModel)
         {
@@ -53,6 +59,8 @@ namespace WebApplication1.Controllers
 
         }
 
+
+
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateContact([FromBody] ContactModel contactModel, [FromRoute] int id)
         {
@@ -60,6 +68,8 @@ namespace WebApplication1.Controllers
             return Ok();
 
         }
+
+
 
 
         [HttpDelete("{id}")]

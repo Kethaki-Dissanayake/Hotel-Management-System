@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Data
 {
-    public class ContactContext : DbContext
+    public class MyContext : DbContext
 
 
     {
-        public ContactContext(DbContextOptions<ContactContext> options)
+        public MyContext(DbContextOptions<MyContext> options)
             :base(options)
         {
 
         }
 
         public DbSet<Contacts> Contacts { get; set; }
+        public DbSet<Features> Features { get; set; }
 
-        
+        public DbSet<Prices> Prices { get; set; }
+
 
     }
 }
