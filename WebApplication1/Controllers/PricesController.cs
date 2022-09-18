@@ -72,7 +72,7 @@ namespace WebApplication1.Controllers
 
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> PriceFeature([FromRoute] int id)
+        public async Task<IActionResult> DeletePrice([FromRoute] int id)
         {
             await _priceRepository.DeletePriceAsync(id);
             return Ok();

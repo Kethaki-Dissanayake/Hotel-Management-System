@@ -6,17 +6,11 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    public class FeatureModel
+    public class RoomModel
     {
-
         [Key]
-
-        public int FeatureId { get; set; }
-        public string Code { get; set; }
+        public int RoomId { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-
-        
 
     }
 }

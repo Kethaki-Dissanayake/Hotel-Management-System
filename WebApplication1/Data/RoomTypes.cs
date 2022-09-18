@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Data
 {
-    public class Features
+    public class RoomTypes
     {
         [Key]
-        public int FeatureId { get; set; }
-        public string Code { get; set; }
+        public int RoomTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-
 
         //Navigation Propaties
 
         public List<Features_RoomTypes> Features_RoomTypes { get; set; }
 
+        public  Rooms Rooms { get; set; }
+
+        public List<Prices> Prices { get; set; }
     }
 }

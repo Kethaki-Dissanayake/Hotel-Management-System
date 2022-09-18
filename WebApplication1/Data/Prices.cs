@@ -13,6 +13,10 @@ namespace WebApplication1.Data
         public int PriceId { get; set; }
         public string Code { get; set; }
         public string CurrentPrice { get; set; }
-        
+
+        //Navigation
+
+        public RoomTypes RoomTypes { get; set; }
+
     }
 }

@@ -22,5 +22,9 @@ namespace WebApplication1.Data
 
         public string Address { get; set; }
 
+        //Navigation
+
+        public Reservations Reservations { get; set; }
+
     }
 }

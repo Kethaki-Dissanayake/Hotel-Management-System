@@ -39,6 +39,11 @@ namespace WebApplication1
             services.AddTransient<IContactRepository, ContactRepository>();
             services.AddTransient<IFeatureRepository, FeatureRepository>();
             services.AddTransient<IPriceRepository, PriceRepository>();
+            services.AddTransient<IRoomTypeRepository, RoomTypeRepository>();
+            services.AddTransient<IRoomRepository, RoomRepository>();
+            services.AddTransient<IPropertyInfoRepository, PropertyInfoRepository>();
+            services.AddTransient<IReservationRepository, ReservationRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
